@@ -1,6 +1,12 @@
+// BASE
 @import 'var.scss';
 @import 'base.scss';
 
+// HEADER
 @import 'header';
+
+// PAGES
 @import 'auth';
 
+// HELPERS
+@import 'form-title';
