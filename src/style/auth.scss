@@ -1,5 +1,22 @@
-.sign-up,
-.sign-in {
+.sign-in,
+.sign-up {
     grid-column: content-s/content-e;
     grid-row: content-s/content-e;
+}
+
+.sign-in-form {
+    display: grid;
+    justify-items: center;
+
+    &__title {
+        width: 100%;
+    }
+
+    &__email {
+
+    }
+
+    &__password {
+        
+    }
 }

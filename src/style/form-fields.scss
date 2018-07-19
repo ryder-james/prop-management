@@ -1,0 +1,42 @@
+.form-input {
+    width: 629px;
+
+    display: grid;
+    grid-template-columns: 129px 500px;
+    grid-template-rows: 1fr;
+
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+
+    &__input {
+        grid-column: 2/3;
+        grid-row: 1/-1;
+    }
+}
+
+.form-input {
+    &__title {
+        color: $c-red-D7;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.3rem;
+    }
+
+    &__input {
+        height: 4rem;
+        width: 50rem;
+
+        padding-left: 2rem;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+
+        border: 1px solid $c-gray-E6;
+        border-radius: .5rem;
+    }
+}
