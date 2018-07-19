@@ -1,9 +1,3 @@
-body {
-    color: $c-gray-4D;
-    font-family: $f-encode;
-    font-weight: 400;
-}
-
 html {
     font-size: 62.5%;
 
@@ -14,4 +8,44 @@ html {
         padding: 0;
         box-sizing: inherit;
     }
+}
+
+body {
+    color: $c-gray-4D;
+    font-family: $f-encode;
+    font-weight: 400;
+}
+
+.app-wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: [page-s] 
+                                14rem 
+                                [content-s]
+                                   1fr 
+                                [content-e] 
+                                14rem 
+                           [page-e];
+    grid-template-rows: [page-s 
+                            header-s] 
+                                13.6rem 
+                            [header-e 
+                            bar-s] 
+                                4rem 
+                            [bar-e 
+                            content-s] 
+                                1fr 
+                            [content-e 
+                        page-e];
+}
+
+.bar {
+    height: 4rem;
+
+    background: $c-gray-D8;
+    
+    grid-column: page-s/page-e;
+    grid-row: bar-s/bar-e;
 }
