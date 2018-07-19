@@ -1,2 +1,35 @@
 @import 'sign-in';
 @import 'sign-up';
+
+.header-wrapper {
+    display: grid;
+    grid-template-columns: [s] 1fr [e];
+    grid-template-rows: [title-s] 3rem [title-e sub-s] 2rem [sub-e];
+
+    &__title {
+        grid-column: s/e;
+        grid-row: title-s/title-e;
+    }
+
+    &__subtitle {
+        grid-column: s/e;
+        grid-row: sub-s/sub-e;
+    }
+}
+
+.header-wrapper {
+    padding-top: 4rem;
+
+    &__title {
+        font-size: 2.4rem;
+        font-weight: 300;
+        line-height: 2rem;
+    }
+
+    &__subtitle {
+        color: $c-red-D7;
+        font-size: 1.6rem;
+        font-weight: 300;
+        line-height: 2rem;
+    }
+}
