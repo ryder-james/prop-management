@@ -11,7 +11,7 @@ class SignInForm extends Component {
             <div className="sign-in-form">
                 <FormTitle className='sign-in-form__title' text='Login' />
                 <Field
-                    className="sign-in-form__email"
+                    className="sign-in-form__email-sign-in"
                     placeholder="Email"
                     title="Email"
                     name="email"
@@ -27,7 +27,7 @@ class SignInForm extends Component {
                     component={FormInput}
                 />
                 <Field
-                    className="sign-in-form__login"
+                    className="sign-in-form__form-button"
                     title="Login"
                     name="login"
                     type="submit"

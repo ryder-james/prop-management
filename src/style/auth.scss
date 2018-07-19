@@ -4,7 +4,8 @@
     grid-row: content-s/content-e;
 }
 
-.sign-in-form {
+.sign-in-form,
+.sign-up-form {
     display: grid;
     justify-items: center;
 
@@ -13,19 +14,33 @@
         margin-top: 6.6rem;
     }
 
-    &__email {
+    &__fullname {
         margin-top: 7.7rem;
     }
 
+    &__unit,
+    &__email-sign-up,
     &__password {
         margin-top: 4rem;
     }
 
-    &__login {
+    &__email-sign-in {
+        margin-top: 7.7rem;
+    }
+
+    &__form-button {
         margin-top: 8.8rem;
     }
 
     &__text-links {
         margin-top: 5.2rem;
+    }
+
+    &__fullname,
+    &__unit,
+    &__email-sign-up,
+    &__email-sign-in,
+    &__password {
+        transform: translateX(-64.5px);
     }
 }
