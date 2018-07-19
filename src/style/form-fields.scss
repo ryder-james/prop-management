@@ -1,3 +1,4 @@
+// INPUTS
 .form-input {
     width: 629px;
 
@@ -38,5 +39,23 @@
 
         border: 1px solid $c-gray-E6;
         border-radius: .5rem;
+    }
+}
+
+// BUTTON
+.form-button {
+    &__button {
+        height: 4rem;
+        width: 21.6rem;
+
+        background: $c-red-D7;
+
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 2.8rem;
+        text-align: center;
+
+        border-radius: 2rem;
     }
 }
