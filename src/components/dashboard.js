@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TabNav from './tabnav';
+import NewsletterGrid from './newsletter/newletterGrid';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Dashboard extends Component {
                 {
                     title: "Newsletter",
                     active: true,
-                    component: <h4>Hey There - Newsletter</h4>
+                    component: <NewsletterGrid/>
                 },
                 {
                     title: "Requests",
@@ -27,7 +28,7 @@ class Dashboard extends Component {
         tabs.map(tab => {
 
             tab.active = (tab.title == title);
-            
+
         });
 
         this.setState({tabs});
