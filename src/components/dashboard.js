@@ -22,7 +22,15 @@ class Dashboard extends Component {
     }
 
     handleTabChange = title => {
-        console.log("Clicked on tab", title);
+        const tabs = this.state.tabs;
+
+        tabs.map(tab => {
+
+            tab.active = (tab.title == title);
+            
+        });
+
+        this.setState({tabs});
     }
 
     render() {

@@ -7,7 +7,7 @@
 
         display: grid;
         grid-template-columns: repeat(auto-fill, 1fr);
-        grid-template-rows: 1fr;
+        grid-template-rows: [s] 1fr [m] 1fr 1fr [e];
         grid-auto-flow: column;
         justify-items: center;
         align-items: center;
@@ -20,11 +20,21 @@
     }
 
     &__tab {
+        grid-row: m/e;
+
+        height: 100%;
         width: 9rem;
 
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 2rem;
         text-align: center;
+
+        border-bottom: 2px solid transparent;
+    }
+
+    &__active {
+        color: $c-red-D7;
+        border-bottom: 2px solid $c-red-D7;
     }
 }
