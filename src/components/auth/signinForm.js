@@ -11,7 +11,7 @@ class SignInForm extends Component {
 
         return (
             <form onSubmit={handleSubmit} className="sign-in-form">
-                <FormTitle className='sign-in-form__title' text='Login' />
+                <FormTitle className="sign-in-form__title" text="Login" />
                 <Field
                     className="sign-in-form__email-sign-in"
                     placeholder="Email"
@@ -45,7 +45,7 @@ class SignInForm extends Component {
 }
 
 SignInForm = reduxForm({
-    form: 'signin'
+    form: "signin"
 })(SignInForm);
 
 export default SignInForm;

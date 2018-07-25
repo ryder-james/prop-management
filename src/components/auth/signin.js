@@ -14,7 +14,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <div className='sign-in'>
+            <div className="sign-in">
                 <SignInForm onSubmit={(event) => this.onSubmit(event)}/>
             </div>
         );
