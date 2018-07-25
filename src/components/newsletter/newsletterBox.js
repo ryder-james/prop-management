@@ -20,6 +20,7 @@ const NewsletterBox = ({date}) => {
         <div className="newsletter-box">
             <div className="newsletter-box__day">{date.getDate()}</div>
             <div className="newsletter-box__month-year">{monthNames[date.getMonth()].substring(0, 3)} {date.getFullYear()}</div>
+            <div className="newsletter-box__point"/>
         </div>
     );
 }

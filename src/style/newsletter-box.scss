@@ -8,9 +8,14 @@
     border-radius: 0.5rem;
 
     display: grid;
+    grid-template-columns: [s] 1fr [e];
+    grid-template-rows: [s] 8.1rem [m] 2.3rem [e];
     justify-items: center;
+    align-content: center;
 
     &__day {
+        grid-column: s/e;
+        grid-row: s/m;
         align-self: end;
 
         font-size: 7rem;
@@ -19,9 +24,28 @@
     }
 
     &__month-year {
+        grid-column:s/e;
+        grid-row: m/e;
         align-self: start;
 
         font-size: 2rem;
         line-height: 2.3rem;
+    }
+
+    &__point {
+        grid-column: s/e;
+        grid-row: s/e;
+        justify-self: end;
+        align-self: center;
+        transform: translateX(52%) rotate(45deg);
+
+        height: 4rem;
+        width: 4rem;
+
+        background: white;
+
+        border: 0.1rem solid $c-red-D7;
+        border-bottom: none;
+        border-left: none;
     }
 }
