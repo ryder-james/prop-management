@@ -18,8 +18,8 @@ const monthNames = [
 const NewsletterBox = ({date}) => {
     return (
         <div className="newsletter-box">
-            <div>{date.getDate()}</div>
-            <div>{monthNames[date.getMonth()].substring(0, 3)} {date.getFullYear()}</div>
+            <div className="newsletter-box__day">{date.getDate()}</div>
+            <div className="newsletter-box__month-year">{monthNames[date.getMonth()].substring(0, 3)} {date.getFullYear()}</div>
         </div>
     );
 }
