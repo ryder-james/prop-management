@@ -11,20 +11,11 @@ import requireAuth from './components/requireAuth';
 import SignIn from './components/auth/signin';
 import SignUp from './components/auth/signup';
 import Layout from './components/layout';
+import Dashboard from './components/dashboard';
 
 import './style/main.scss';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
-
-class Dashboard extends Component {
-  render() {
-    return (
-      <div>
-        hey there
-      </div>
-    );
-  }
-}
 
 function main() {
   ReactDOM.render(
