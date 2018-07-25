@@ -9,8 +9,8 @@ class Dashboard extends Component {
             tabs: [
                 {
                     title: "Newsletter",
-                    active: false,
-                    component: <h4>Newsletter</h4>
+                    active: true,
+                    component: <h4>Hey There - Newsletter</h4>
                 },
                 {
                     title: "Requests",
@@ -21,10 +21,14 @@ class Dashboard extends Component {
         }
     }
 
+    handleTabChange = title => {
+        console.log("Clicked on tab", title);
+    }
+
     render() {
         return (
             <div className="dashboard">
-                <TabNav tabs={this.state.tabs}/>
+                <TabNav handleClick={title => this.handleTabChange(title)} tabs={this.state.tabs}/>
             </div>
         );
     }
