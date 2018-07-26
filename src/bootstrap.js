@@ -14,6 +14,7 @@ import Layout from './components/layout';
 import Dashboard from './components/dashboard';
 
 import './style/main.scss';
+import NewNewsletter from './components/newsletter/newsletterNew';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
@@ -26,12 +27,14 @@ function main() {
             <Route path='/' exact component={SignIn}/>
             <Route path='/signin' component={SignIn}/>
             <Route path='/signup' component={SignUp}/>
+
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
+            <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
           </Layout>
         </Switch>
       </Router>
-    </Provider>
-    , document.querySelector(".app-wrapper"));
+    </Provider>,
+    document.querySelector(".app-wrapper"));
 }
 
 document.addEventListener("DOMContentLoaded", main);
