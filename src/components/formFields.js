@@ -19,11 +19,16 @@ export class FormInput extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, title, input, type, placeholder } = this.props;
+        const { className, small, danger, title, input, type, placeholder } = this.props;
+        const smallClass = `form-button${small ? "-small" : ""}`;
+        
         return (
-            <div className={`${className} form-button`}>
+            <div className={`${className} ${smallClass}`}>
                 <button
-                    className="form-button__button"
+                    className={`
+                        ${smallClass}__button
+                        ${smallClass}${danger ? "__danger" : ""}
+                    `}
                     type={type}
                     {...input}
                 >

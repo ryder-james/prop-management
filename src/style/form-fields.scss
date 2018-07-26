@@ -77,3 +77,24 @@
         border-radius: 2rem;
     }
 }
+
+.form-button-small {
+    &__button {
+        height: 2.4rem;
+        width: 7.4rem;
+
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+
+        border-radius: 1.6rem;
+        border: 1px solid $c-gray-4D;
+    }
+
+    &__danger {
+        background: $c-red-D7;
+        
+        border: none;
+        color: white;
+    }
+}

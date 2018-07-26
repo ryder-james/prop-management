@@ -6,12 +6,20 @@
 @import 'header';
 
 // PAGES
-@import 'auth'; // sign-in and sign-up
 @import 'dashboard';
-@import 'newsletter-new';
+/// Sign-in and Sign-up
+    @import 'auth';
+/// Newsletter
+    @import 'newsletter-new';
+    @import 'newsletter-grid';
+    @import 'newsletter-box';
+    @import 'newsletter-archive';
+    @import 'newsletter-latest';
+    @import 'newsletter-new-form';
 
 // HELPERS
 @import 'form-title';
 @import 'form-fields';
 @import 'text-link';
 @import 'button';
+@import 'tab-nav';
