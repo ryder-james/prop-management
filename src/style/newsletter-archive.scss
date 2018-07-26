@@ -1,4 +1,50 @@
 .newsletter-archive {
     grid-column: archive-s/archive-e;
     grid-row: archive-s/archive-e;
+
+    display: grid;
+    grid-template-rows: [title-s] 2.7rem [title-e items-s] 1fr [items-e];
+
+    &__title {
+        color: $c-red-D7;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.3rem;
+
+        border-bottom: 0.1rem solid $c-gray-E6;
+        padding-bottom: 0.4rem;
+    }
+}
+
+.archive-items {
+    margin-top: 1.6rem;
+
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-row-gap: 1.6rem;
+}
+
+.archive-item {
+    display: grid;
+
+    &__title {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        
+        margin-bottom: 3px;
+
+        transition: all 0.2s ease;
+
+        &:hover {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+    }
+
+    &__date {
+        color: $c-red-D7;
+        font-size: 1.3rem;
+        font-family: $f-encode-cond;
+        line-height: 1.6rem;
+    }
 }
