@@ -61,6 +61,20 @@
 }
 
 // BUTTON
+.form-button,
+.form-button-small {
+    &__button {
+        transition: all 0.2s ease;
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: scale(0.95);
+            transform: translateY(2.05);
+        }
+    }
+}
+
 .form-button {
     &__button {
         height: 4rem;
