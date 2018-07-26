@@ -33,6 +33,13 @@
         border-radius: 0.5rem 0.5rem 0 0;
     }
 
+    &__button {
+        grid-column: s/e;
+        grid-row: s/m;
+        justify-self: end;
+        align-self: end;
+    }
+
     &__body {
         grid-row: m/e;
 
