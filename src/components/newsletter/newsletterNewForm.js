@@ -6,10 +6,10 @@ import { FormInput, FormButton, FormTextArea } from "../formFields";
 
 class NewNewsletterForm extends Component {
     render() {
-        const { handleSubmit } = this.props;
+        const { onSubmit, onCancel } = this.props;
 
         return (
-            <form onSubmit={handleSubmit} className="new-newsletter-form">
+            <form className="new-newsletter-form">
                 <FormTitle className="new-newsletter-form__title" text="New Newsletter" />
                 <Field
                     className="new-newsletter-form__newsletter-title"
@@ -28,13 +28,23 @@ class NewNewsletterForm extends Component {
                     component={FormTextArea}
                 />
                 <Field
-                    className="new-newsletter__form-button"
+                    className="new-newsletter-form__submit"
                     small={true}
                     danger={true}
                     title="Submit"
                     name="submit"
                     type="submit"
                     component={FormButton}
+                    onClick={onSubmit}
+                />
+                <Field
+                    className="new-newsletter-form__cancel"
+                    small={true}
+                    title="Cancel"
+                    name="cancel"
+                    type="button"
+                    component={FormButton}
+                    onClick={onCancel}
                 />
             </form>
         );

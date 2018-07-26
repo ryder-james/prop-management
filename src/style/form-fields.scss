@@ -24,7 +24,7 @@
 .form-input,
 .form-textarea {
     &__title {
-        color: $c-red-D7;
+        color: $c-red-C9;
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 2.3rem;
@@ -66,7 +66,7 @@
         height: 4rem;
         width: 21.6rem;
 
-        background: $c-red-D7;
+        background: $c-red-C9;
 
         color: white;
         font-size: 2.2rem;
@@ -83,6 +83,8 @@
         height: 2.4rem;
         width: 7.4rem;
 
+        background: white;
+
         font-size: 1.4rem;
         line-height: 1.7rem;
         text-align: center;
@@ -92,9 +94,10 @@
     }
 
     &__danger {
-        background: $c-red-D7;
-        
-        border: none;
+        background: $c-red-C9;
+
         color: white;
+
+        border: 1px solid $c-red-C9;
     }
 }

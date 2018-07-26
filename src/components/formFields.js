@@ -19,7 +19,7 @@ export class FormInput extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, small, danger, title, input, type, placeholder } = this.props;
+        const { className, small, danger, title, input, type, onClick } = this.props;
         const smallClass = `form-button${small ? "-small" : ""}`;
         
         return (
@@ -31,6 +31,7 @@ export class FormButton extends Component {
                     `}
                     type={type}
                     {...input}
+                    onClick={onClick}
                 >
                     {title}
                 </button>

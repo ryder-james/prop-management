@@ -7,10 +7,15 @@ class NewNewsletter extends Component {
         console.log("trying to handle submit");
     }
 
+    onCancel = () => {
+        console.log("trying to cancel");
+        
+    }
+
     render() {
         return (
             <div className="new-newsletter">
-                <NewNewsletterForm onSubmit={event => this.onSubmit(event)}/>
+                <NewNewsletterForm onSubmit={event => this.onSubmit(event)} onCancel={() => this.onCancel()}/>
             </div>
         );
     }
