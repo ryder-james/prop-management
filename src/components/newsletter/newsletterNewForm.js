@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from "redux-form";
 
 import { FormTitle } from "../formTitle";
-import { FormInput, FormButton, FormTextArea } from "../formFields";
+import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
 class NewNewsletterForm extends Component {
     render() {
@@ -44,6 +44,14 @@ class NewNewsletterForm extends Component {
                     type="button"
                     component={FormButton}
                     onClick={onCancel}
+                />
+                <Field
+                    className="new-newsletter-form__image"
+                    small={true}
+                    name="image"
+                    type="file"
+                    title="Image"
+                    component={FormImage}
                 />
             </form>
         );
