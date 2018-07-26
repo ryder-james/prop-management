@@ -7,8 +7,12 @@
 
     height: 100%;
 
+    margin-top: 4.7rem;
+
     display: grid;
     grid-template-columns: [box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e];
     grid-template-rows: [s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
+    grid-column-gap: 6.1rem;
+    grid-row-gap: 3.85rem;
     justify-content: center;
 }

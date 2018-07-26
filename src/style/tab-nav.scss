@@ -4,6 +4,7 @@
     display: grid;
     grid-template-rows: [tabs-s] 50px [tabs-e content-s] 1fr [content-e];
 
+
     &__tabs {
         grid-row: tabs-s/tabs-e;
 
@@ -38,5 +39,6 @@
     &__active {
         color: $c-red-D7;
         border-bottom: 2px solid $c-red-D7;
+        transition: all 0.5s ease;
     }
 }

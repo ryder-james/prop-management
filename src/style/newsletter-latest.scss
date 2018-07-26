@@ -2,8 +2,11 @@
     grid-column: latest-s/latest-e;
     grid-row: s/e;
 
+    border: 1px solid $c-gray-E6;
+    border-radius: 0.5rem;
+
     display: grid;
-    grid-template-columns: [s] 1fr [e];
+    grid-template-columns: [s] 958px [e];
     grid-template-rows: [s] 258px [m] 405px [e];
 
     & > * {
@@ -17,15 +20,27 @@
         align-self: center;
     }
 
+    &__title {
+        color: white;
+        font-size: 4rem;
+        font-weight: 500;
+        line-height: 5rem;
+        text-align: center;
+    }
+
     &__image {
         z-index: -10;
+        border-radius: 0.5rem 0.5rem 0 0;
     }
 
     &__body {
         grid-row: m/e;
 
         p {
+            margin: 6.3rem 6.05rem;
 
+            font-size: 1.6rem;
+            line-height: 2.2rem;
         }
     }
 }
