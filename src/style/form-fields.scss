@@ -1,9 +1,9 @@
 // INPUTS
 .form-input {
-    width: 629px;
+    width: 100%;
 
     display: grid;
-    grid-template-columns: 129px 500px;
+    grid-template-columns: 3fr 10fr;
     grid-template-rows: 1fr;
 
     justify-content: center;
@@ -30,7 +30,7 @@
 
     &__input {
         height: 4rem;
-        width: 50rem;
+        width: 100%;
 
         padding-left: 2rem;
 
