@@ -12,6 +12,10 @@ class EditNewsletter extends Component {
         history.push('/dashboard');
     }
 
+    componentDidMount() {
+        console.log(this.props.match.params.id);
+    }
+
     render() {
         return (
             <div className="new-newsletter">

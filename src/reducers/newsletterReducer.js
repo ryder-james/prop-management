@@ -3,7 +3,8 @@ import {
 } from '../actions/types';
 
 const INIT_STATE = {
-    newsletters: []
+    newsletters: [],
+    newsletterToEdit: {}
 }
 
 export default function(state = INIT_STATE, action) {
@@ -13,7 +14,19 @@ export default function(state = INIT_STATE, action) {
             return {
                 ...state,
                 newsletters
-            }
+            };
+        case FETCH_NEWSLETTER_ID:
+            const newsletterID = action.payload;
+            var newsletterToEdit = {};
+            state.newsletters.map(newsletter => {
+                if (newsletter._id == newsletterID) {
+                    newsletterToEdit = newsletter;
+                }
+            });
+            return {
+                ...state,
+                newsletterToEdit
+            };
         default:
             return state;
     }
