@@ -21,7 +21,7 @@ class NewNewsletterForm extends Component {
                 />
                 <Field
                     className="new-newsletter-form__body"
-                    placeholder="Body"
+                    placeholder="Newsletter Body"
                     title="Body"
                     name="body"
                     type="text"

@@ -5,3 +5,10 @@ $c-red-C9: #C90000;
 
 $f-encode: "Encode Sans", sans-serif;
 $f-encode-cond: "Encode Sans Condensed", sans-serif;
+
+@mixin red-title {
+    color: $c-red-C9;
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.3rem;
+}

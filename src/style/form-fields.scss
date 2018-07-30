@@ -24,10 +24,7 @@
 .form-input,
 .form-textarea {
     &__title {
-        color: $c-red-C9;
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 2.3rem;
+        @include red-title;
     }
 
     &__input {
@@ -53,8 +50,6 @@
         resize: none;
 
         height: 35.5rem;
-
-        font-size: 2.1rem;
 
         padding-top: 1rem;
     }
@@ -113,5 +108,24 @@
         color: white;
 
         border: 1px solid $c-red-C9;
+    }
+}
+
+// IMAGE
+.form-image {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+        @include red-title;
+
+        margin-bottom: 2rem;
+    }
+
+    &__image {
+        height: 13.7rem;
+        width: 16rem;
+
+        border: none;
     }
 }
