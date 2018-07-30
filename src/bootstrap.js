@@ -16,6 +16,7 @@ import Dashboard from './components/dashboard';
 import './style/main.scss';
 import NewNewsletter from './components/newsletter/newsletterNew';
 import EditNewsletter from './components/newsletter/newsletterEdit';
+import NewsletterDetail from './components/newsletter/newsletterDetail';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
@@ -32,6 +33,7 @@ function main() {
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
             <Route path='/newsletter/edit/:id' component={requireAuth(EditNewsletter)}/>
+            <Route path='/newsletter/detail/:id' component={requireAuth(NewsletterDetail)}/>
           </Layout>
         </Switch>
       </Router>

@@ -6,7 +6,7 @@ import history from '../../history';
 
 import NewsletterBox from './newsletterBox';
 import NewsletterArchive from './newsletterArchive';
-import NewsletterLatest from './newsletterLatest';
+import Newsletter from './newsletter';
 import Button from '../button';
 
 class NewsletterGrid extends Component {
@@ -24,7 +24,7 @@ class NewsletterGrid extends Component {
                 <Button className="newsletter-grid__button" callback={() => this.handleAddNewsletter()} icon="fas fa-plus"/>
                 <NewsletterBox/>
                 <NewsletterArchive/>
-                <NewsletterLatest/>
+                <Newsletter/>
             </div>
         );
     }

@@ -5,7 +5,7 @@ import history from '../../history';
 
 import Button from '../button';
 
-class NewsletterLatest extends Component {
+class Newsletter extends Component {
     handleEdit = () => {
         history.push(`/newsletter/edit/${this.props._id}`);
     }
@@ -13,11 +13,11 @@ class NewsletterLatest extends Component {
     render() {
         const { title, imageUrl, body } = this.props;
         return (
-            <div className="newsletter-latest">
-                <h1 className="newsletter-latest__title">{title}</h1>
-                <img className="newsletter-latest__image" src={imageUrl}/>
-                <Button className="newsletter-latest__button" callback={() => this.handleEdit()} icon="fas fa-pencil-alt"/>
-                <div className="newsletter-latest__body">
+            <div className="newsletter">
+                <h1 className="newsletter__title">{title}</h1>
+                <img className="newsletter__image" src={imageUrl}/>
+                <Button className="newsletter__button" callback={() => this.handleEdit()} icon="fas fa-pencil-alt"/>
+                <div className="newsletter__body">
                     <p>{body}</p>
                 </div>
             </div>
@@ -33,4 +33,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(NewsletterLatest);
+export default connect(mapStateToProps)(Newsletter);

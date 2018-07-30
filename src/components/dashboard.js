@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TabNav from './tabnav';
-import NewsletterGrid from './newsletter/newletterGrid';
+import NewsletterGrid from './newsletter/newsletterGrid';
 
 class Dashboard extends Component {
     constructor(props) {
