@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import history from '../../history';
+
 import NewNewsletterForm from './newsletterNewForm';
 
 class NewNewsletter extends Component {
@@ -8,8 +10,7 @@ class NewNewsletter extends Component {
     }
 
     onCancel = () => {
-        console.log("trying to cancel");
-        
+        history.push('/dashboard');
     }
 
     render() {
