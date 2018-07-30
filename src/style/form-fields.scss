@@ -57,8 +57,10 @@
 
 // BUTTON
 .form-button,
-.form-button-small {
-    &__button {
+.form-button-small,
+.form-image {
+    &__button,
+    &__replace {
         transition: all 0.2s ease;
         &:focus {
             outline: none;
@@ -113,19 +115,49 @@
 
 // IMAGE
 .form-image {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: [s] 16rem [e];
+    grid-template-rows: [title-s] 1fr [title-e image-s] 13.7rem [image-e];
+
+    & > * {
+        grid-column: s/e;
+    }
 
     &__title {
         @include red-title;
+
+        grid-row: title-s/title-e;
 
         margin-bottom: 2rem;
     }
 
     &__image {
+        grid-row: image-s/image-e;
+
         height: 13.7rem;
         width: 16rem;
 
+        background: #DADADA;
+
         border: none;
+    }
+
+    &__replace {
+        grid-row: image-s/image-e;
+        justify-self: center;
+        align-self: center;
+
+        height: 2.4rem;
+        width: 7.4rem;
+
+        background: white;
+
+        color: $c-red-C9;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+
+        border: 1px solid white;
+        border-radius: 1.6rem;
     }
 }
