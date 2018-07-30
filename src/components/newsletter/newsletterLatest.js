@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import history from '../../history';
+
 import Button from '../button';
 
 class NewsletterLatest extends Component {
     handleEdit = () => {
-        console.log("Trying to handle edit");
+        history.push(`/newsletter/edit:${this.props._id}`);
     }
 
     render() {

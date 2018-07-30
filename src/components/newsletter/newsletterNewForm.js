@@ -6,11 +6,11 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
 class NewNewsletterForm extends Component {
     render() {
-        const { handleSubmit, onCancel } = this.props;
+        const { handleSubmit, onCancel, title } = this.props;
 
         return (
             <form onSubmit={handleSubmit} className="new-newsletter-form">
-                <FormTitle className="new-newsletter-form__title" text="New Newsletter" />
+                <FormTitle className="new-newsletter-form__title" text={title}/>
                 <Field
                     className="new-newsletter-form__newsletter-title"
                     placeholder="Newsletter Title"
