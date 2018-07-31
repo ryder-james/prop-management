@@ -5,16 +5,30 @@
 
     display: grid;
     grid-template-columns: [box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e];
-    grid-template-rows: [add-s] 4.7rem [add-e s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
+    grid-template-rows: [button-s] 4.7rem [button-e s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
     grid-column-gap: 6.1rem;
     justify-content: center;
 
+    &__title {
+        grid-row: button-s/button-e;
+    }
+
     &__button {
         grid-column: latest-s/latest-e;
-        grid-row: add-s/add-e;
+        grid-row: button-s/button-e;
         justify-self: end;
         align-self: center;
         
         margin-right: 1rem;
     }
+}
+
+.newsletter-wrapper {
+    grid-column: content-s/content-s;
+    grid-row: content-s/content-e;
+
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: [content-s] 1fr [content-e];
 }

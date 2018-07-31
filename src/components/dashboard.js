@@ -11,7 +11,7 @@ class Dashboard extends Component {
                 {
                     title: "Newsletter",
                     active: true,
-                    component: <NewsletterGrid/>
+                    component: <NewsletterGrid renderArchive={true} buttonIcon="fas fa-plus"/>
                 },
                 {
                     title: "Requests",

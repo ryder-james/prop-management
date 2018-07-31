@@ -21,10 +21,11 @@ class NewsletterGrid extends Component {
     render() {
         return (
             <div className="newsletter-grid">
-                <Button className="newsletter-grid__button" callback={() => this.handleAddNewsletter()} icon="fas fa-plus"/>
-                <NewsletterBox/>
-                <NewsletterArchive/>
-                <Newsletter/>
+                {this.props.title ? <div className="newsletter-grid__title">{this.props.title}</div> : ""}
+                <Button className="newsletter-grid__button" callback={() => this.handleAddNewsletter()} icon={this.props.buttonIcon ? this.props.buttonIcon : null} text={this.props.buttonText ? this.props.buttonText : null}/>
+                <NewsletterBox date={this.props.date}/>
+                {this.props.renderArchive ? <NewsletterArchive/> : ""}
+                <Newsletter newsletterID={this.props.ID ? this.props.ID : null}/>
             </div>
         );
     }

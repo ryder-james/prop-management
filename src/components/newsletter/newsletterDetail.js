@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Newsletter from './newsletter';
+import NewsletterGrid from './newsletterGrid';
 
 class NewsletterDetail extends Component {
     render() {
         return (
-            <div className="newsletter-detail">
-                <Newsletter newsletterID="115"/>
+            <div className="newsletter-wrapper">
+                <NewsletterGrid title="Newsletter Archive" ID={this.props.match.params.id} buttonText="Cancel"/>
             </div>
         );
     }
