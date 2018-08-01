@@ -12,4 +12,13 @@ class NewsletterDetail extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    const { newsletters, newsletterToEdit } = state.newsletters;
+    const latestNewsletter = newsletters[0];
+    return {
+        ...latestNewsletter,
+        newsletterToEdit
+    }
+}
+
 export default NewsletterDetail;
