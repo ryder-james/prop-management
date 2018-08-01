@@ -28,7 +28,6 @@ class NewsletterGrid extends Component {
 
         return (
             <div className="newsletter-grid">
-                {this.props.title ? <div className="newsletter-grid__title">{this.props.title}</div> : ""}
                 <Button className="newsletter-grid__button" callback={() => this.handleAddNewsletter()} icon={this.props.buttonIcon ? this.props.buttonIcon : null} text={this.props.buttonText ? this.props.buttonText : null}/>
                 {this.props.renderArchive ? <NewsletterArchive/> : ""}
                 <Newsletter {...this.newsletter}/>

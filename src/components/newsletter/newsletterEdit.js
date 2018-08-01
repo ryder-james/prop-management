@@ -19,6 +19,7 @@ class EditNewsletter extends Component {
     }
 
     render() {
+        console.log(this.props.requestedNewsletter);
         return (
             <div className="new-newsletter">
                 <NewNewsletterForm
