@@ -1,29 +1,10 @@
 // BASE
-@import 'var.scss';
-@import 'base.scss';
+    @import 'var.scss';
+    @import 'base.scss';
+    @import 'mixins.scss';
 
-// HEADER
-@import 'header';
-
-// PAGES
-@import 'dashboard';
-/// Sign-in and Sign-up
-    @import 'auth';
-/// Newsletter
-    @import 'newsletter-new';
-    @import 'newsletter-grid';
-    @import 'newsletter-box';
-    @import 'newsletter-archive';
-    @import 'newsletter';
-    @import 'newsletter-new-form';
-/// Requests
-    @import 'requests-grid';
-    @import 'requests-boxes';
-    @import 'requests';
-
-// HELPERS
-@import 'form-title';
-@import 'form-fields';
-@import 'text-link';
-@import 'button';
-@import 'tab-nav';
+// IMPORT FILES
+    @import './import-files/componentImports';
+    @import './import-files/newsletterImports';
+    @import './import-files/pagesImports';
+    @import './import-files/requestsImports';
