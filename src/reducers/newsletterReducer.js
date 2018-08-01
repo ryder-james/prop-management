@@ -5,7 +5,7 @@ import {
 
 const INIT_STATE = {
     newsletters: [],
-    newsletterToEdit: {}
+    requestedNewsletter: {}
 }
 
 export default function(state = INIT_STATE, action) {
@@ -18,15 +18,15 @@ export default function(state = INIT_STATE, action) {
             };
         case FETCH_NEWSLETTER_ID:
             const newsletterID = action.payload;
-            var newsletterToEdit = {};
+            var requestedNewsletter = {};
             state.newsletters.map(newsletter => {
                 if (newsletter._id == newsletterID) {
-                    newsletterToEdit = newsletter;
+                    requestedNewsletter = newsletter;
                 }
             });
             return {
                 ...state,
-                newsletterToEdit
+                requestedNewsletter
             };
         default:
             return state;

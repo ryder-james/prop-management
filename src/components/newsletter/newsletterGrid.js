@@ -21,7 +21,7 @@ class NewsletterGrid extends Component {
 
     render() {
         if (this.props.ID) {
-            this.newsletter = this.props.newsletterToEdit;
+            this.newsletter = this.props.requestedNewsletter;
         } else {
             this.newsletter = this.props.latestNewsletter;
         }
@@ -39,11 +39,11 @@ class NewsletterGrid extends Component {
 }
 
 function mapStateToProps(state) {
-    const { newsletters, newsletterToEdit } = state.newsletters;
+    const { newsletters, requestedNewsletter } = state.newsletters;
     const latestNewsletter = newsletters[0];
     return {
         latestNewsletter,
-        newsletterToEdit
+        requestedNewsletter
     }
 }
 
