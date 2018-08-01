@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TabNav from './tabnav';
 import NewsletterGrid from './newsletter/newsletterGrid';
+import history from '../history';
 
 class Dashboard extends Component {
     constructor(props) {
@@ -11,7 +12,7 @@ class Dashboard extends Component {
                 {
                     title: "Newsletter",
                     active: true,
-                    component: <NewsletterGrid renderArchive={true} buttonIcon="fas fa-plus"/>
+                    component: <NewsletterGrid renderArchive={true} buttonIcon="fas fa-plus" callback={() => history.push('/newsletter/new')}/>
                 },
                 {
                     title: "Requests",

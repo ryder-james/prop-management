@@ -11,7 +11,7 @@ class EditNewsletter extends Component {
     }
 
     onCancel = () => {
-        history.push('/dashboard');
+        history.goBack();
     }
 
     componentDidMount() {
@@ -19,7 +19,6 @@ class EditNewsletter extends Component {
     }
 
     render() {
-        console.log(this.props.requestedNewsletter);
         return (
             <div className="new-newsletter">
                 <NewNewsletterForm
