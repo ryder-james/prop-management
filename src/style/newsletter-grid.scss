@@ -4,13 +4,21 @@
     height: 100%;
 
     display: grid;
-    grid-template-columns: [box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e];
-    grid-template-rows: [button-s] 4.7rem [button-e s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
+    grid-template-columns: [s box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e e];
+    grid-template-rows: [button-s] 5.5rem [button-e s box-s] 16rem [box-e archive-s] 1fr [archive-e e];
     grid-column-gap: 6.1rem;
     justify-content: center;
 
     &__title {
+        grid-column: s/e;
         grid-row: button-s/button-e;
+        justify-self: start;
+        align-self: center;
+
+        width: 99%;
+
+        padding-top: 1.4rem;
+        padding-left: 1%;
     }
 
     &__button {
@@ -20,6 +28,11 @@
         align-self: center;
         
         margin-right: 1rem;
+    }
+
+    &__title,
+    &__button {
+        transform: translateY(-0.5rem);
     }
 }
 
