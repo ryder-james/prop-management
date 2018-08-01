@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../../actions';
 
 import history from '../../history';
 
@@ -11,18 +9,18 @@ class Newsletter extends Component {
         history.push(`/newsletter/edit/${this.props._id}`);
     }
 
-    componentDidMount() {
-        if (this.props.newsletterID) {
-            this.props.fetchNewsletterWithID(this.props.newsletterID);
-        }
-    }
+    // componentDidMount() {
+    //     if (this.props.newsletterID) {
+    //         this.props.fetchNewsletterWithID(this.props.newsletterID);
+    //     }
+    // }
 
     render() {
         var { title, imageUrl, body, newsletterID, newsletterToEdit } = this.props;
 
-        if (newsletterID) {
-            var { title, imageUrl, body } = newsletterToEdit;
-        }
+        // if (newsletterID) {
+        //     var { title, imageUrl, body } = newsletterToEdit;
+        // }
 
         return (
             <div className="newsletter">
@@ -37,13 +35,4 @@ class Newsletter extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    const { newsletters, newsletterToEdit } = state.newsletters;
-    const latestNewsletter = newsletters[0];
-    return {
-        ...latestNewsletter,
-        newsletterToEdit
-    }
-}
-
-export default connect(mapStateToProps, actions)(Newsletter);
+export default Newsletter;
