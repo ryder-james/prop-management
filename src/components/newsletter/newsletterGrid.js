@@ -32,7 +32,7 @@ class NewsletterGrid extends Component {
                 <Button className="newsletter-grid__button" callback={() => this.handleAddNewsletter()} icon={this.props.buttonIcon ? this.props.buttonIcon : null} text={this.props.buttonText ? this.props.buttonText : null}/>
                 {this.props.renderArchive ? <NewsletterArchive/> : ""}
                 <Newsletter {...this.newsletter}/>
-                <NewsletterBox date={this.props.date}/>
+                <NewsletterBox {...this.newsletter}/>
             </div>
         );
     }

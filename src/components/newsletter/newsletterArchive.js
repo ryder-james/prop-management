@@ -33,6 +33,7 @@ class NewsletterArchive extends Component {
 
 function mapStateToProps(state) {
     const { newsletters } = state.newsletters;
+    newsletters.splice(0, 1);
     return {
         newsletters
     }

@@ -9,18 +9,8 @@ class Newsletter extends Component {
         history.push(`/newsletter/edit/${this.props._id}`);
     }
 
-    // componentDidMount() {
-    //     if (this.props.newsletterID) {
-    //         this.props.fetchNewsletterWithID(this.props.newsletterID);
-    //     }
-    // }
-
     render() {
-        var { title, imageUrl, body, newsletterID, newsletterToEdit } = this.props;
-
-        // if (newsletterID) {
-        //     var { title, imageUrl, body } = newsletterToEdit;
-        // }
+        var { title, imageUrl, body } = this.props;
 
         return (
             <div className="newsletter">
