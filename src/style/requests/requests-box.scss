@@ -14,7 +14,8 @@
     grid-template-rows: [s] 8.1rem [m] 2.3rem [e];
     justify-items: center;
 
-    &__count {
+    &__count,
+    &__icon {
         grid-column: s/e;
         grid-row: s/m;
         align-self: end;
@@ -43,10 +44,34 @@
         height: 4rem;
         width: 4rem;
 
-        background: white;
+        background: $c-red-C9;
 
-        border: 0.1rem solid $c-gray-E6;
+        border: 0.1rem solid $c-red-C9;
         border-bottom: none;
         border-left: none;
     }
+
+    &__icon {
+        visibility: hidden;
+    }
+
+    &:hover {
+        cursor: pointer;
+
+        .requests-box {
+            &__count {
+                visibility: hidden;
+            }
+
+            &__icon {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.active {
+    background: $c-red-C9;
+    color: white;
+    border-color: $c-red-C9;
 }
