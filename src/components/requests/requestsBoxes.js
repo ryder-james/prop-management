@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import RequestsBox from './requestsBox';
 
 class RequestsBoxes extends Component {
@@ -13,5 +14,4 @@ class RequestsBoxes extends Component {
     }
 }
 
-export default RequestsBoxes
-;
+export default RequestsBoxes;

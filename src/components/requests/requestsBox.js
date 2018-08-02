@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class RequestsBox extends Component {
     constructor() {
@@ -11,15 +13,30 @@ class RequestsBox extends Component {
 
     render() {
         const { count, title, icon } = this.props;
+
+        this.active = false;
+
+        if (this.props.selectedRequests == title) {
+            this.active = true;
+        }
+
         return (
-            <a onClick={() => this.setState({ active: !this.state.active})} className={`requests-box ${this.state.active ? "active" : ""}`}>
+            <a onClick={() => this.props.changeSelectedRequest(title)} className={`requests-box ${this.active ? "active" : ""}`}>
                 <div className="requests-box__count">{count}</div>
                 <div className="requests-box__title">{title}</div>
                 <div className={`requests-box__icon ${icon}`}/>
-                {this.state.active ? <div className="requests-box__point"/> : ""}
+                {this.active ? <div className="requests-box__point"/> : ""}
             </a>
         );
     }
 }
 
-export default RequestsBox;
+function mapStateToProps(state) {
+    const { selectedRequests } = state.requests;
+
+    return {
+        selectedRequests
+    }
+}
+
+export default connect(mapStateToProps, actions)(RequestsBox);
