@@ -1,0 +1,52 @@
+.requests-box {
+    align-content: center;
+
+    height: 16rem;
+    width: 16rem;
+
+    color: black;
+
+    border: 0.1rem solid $c-gray-E6;
+    border-radius: 0.5rem;
+
+    display: grid;
+    grid-template-columns: [s] 1fr [e];
+    grid-template-rows: [s] 8.1rem [m] 2.3rem [e];
+    justify-items: center;
+
+    &__count {
+        grid-column: s/e;
+        grid-row: s/m;
+        align-self: end;
+
+        font-size: 7rem;
+        line-height: 8.1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        grid-column:s/e;
+        grid-row: m/e;
+        align-self: start;
+
+        font-size: 2rem;
+        line-height: 2.3rem;
+    }
+
+    &__point {
+        grid-column: s/e;
+        grid-row: s/e;
+        justify-self: end;
+        align-self: center;
+        transform: translateX(52%) rotate(45deg);
+
+        height: 4rem;
+        width: 4rem;
+
+        background: white;
+
+        border: 0.1rem solid $c-gray-E6;
+        border-bottom: none;
+        border-left: none;
+    }
+}
