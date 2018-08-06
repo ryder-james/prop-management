@@ -42,12 +42,15 @@
     &__move {
         grid-column: date-s/date-e;
         grid-row: s/e;
-        
-        display: none;
+        justify-self: end;
     }
 
     &__description {
         grid-column: s/e;
+    }
+
+    .bg-F8 {
+        background: $c-gray-F8;
     }
 
     .item-description {
@@ -58,6 +61,8 @@
 }
 
 .requests-item {
+    transition: all 0.3s ease;
+
     &__icon {
         font-size: 3rem;
     }
@@ -91,6 +96,14 @@
     &__date {
         font-size: 1.4rem;
         line-height: 1.7rem;
+
+        transition: all 0.3s ease;
+    }
+
+    &__move {
+        transition: all 0.3s ease;
+        transform: translateX(100px);
+        opacity: 0;
     }
 
     .item-description {
@@ -104,6 +117,19 @@
         &__text {
             font-size: 1.4rem;
             line-height: 1.7rem;
+        }
+    }
+
+    &:hover {
+        background: $c-gray-F8;
+
+        .requests-item__move {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .requests-item__date {
+            transform: translate(-100px);
         }
     }
 }
