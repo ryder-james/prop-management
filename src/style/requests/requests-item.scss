@@ -14,11 +14,17 @@
     &__title {
         grid-column: title-s/title-e;
         grid-row: title-s/title-e;
+        align-self: end;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
     }
 
     &__tenant-unit {
         grid-column: title-s/title-e;
         grid-row: tenant-s/tenant-e;
+        align-self: start;
     }
 
     &__arrow {
@@ -56,9 +62,17 @@
     }
 
     &__title {
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 2.3;
+        &__text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 2.3;
+
+            margin-right: 2.5rem;
+        }
+        &__arrow {
+            color: $c-gray-4D;
+            font-size: 3rem;
+        }
     }
 
     &__tenant-unit {
