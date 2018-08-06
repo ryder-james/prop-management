@@ -12,19 +12,22 @@ export function changeSelectedRequest(title) {
     }
 }
 
-export function createNewRequest(userID, fields, success) {
-    console.log("token:", localStorage.getItem("token"));
-    console.log("uID:", userID);
-    console.log("fields:", fields);
+export function createNewRequest(userID, formData, success) {
+    const token = localStorage.getItem("token");
 
-    // return function() {
-    //     axios.post(`${ROOT_URL}/requests/new`, newRequest)
-    //         then(response => {
-    //             console.log(response.data);
-    //             success();
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }
+    return function() {
+        axios.post(`${ROOT_URL}/requests/new`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                authorization: token
+            }
+        })
+            .then(response => {
+                console.log(response.data);
+                success();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 }

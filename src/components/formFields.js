@@ -62,8 +62,10 @@ export class FormTextArea extends Component {
 
 export class FormImage extends Component {
     handleSelectedImage = event => {
-        var image = document.querySelector("#newsletter-new-image");
+        const { input: {onChange } } = this.props;
+        const image = document.querySelector("#newsletter-new-image");
         image.src = URL.createObjectURL(event.target.files[0]);
+        onChange(event.target.files[0]);
     }
 
     render() {

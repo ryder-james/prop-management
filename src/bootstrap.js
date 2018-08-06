@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { Router, Route, Switch } from 'react-router-dom';
-import reduxThunk from 'redux-thunk';
+import thunk from 'redux-thunk';
 
 import reducers from './reducers';
 import history from './history';
@@ -20,7 +20,7 @@ import NewsletterDetail from './components/newsletter/newsletterDetail';
 
 import NewRequest from './components/requests/requestsNew';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
+const createStoreWithMiddleware = applyMiddleware(thunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
 function main() {
   ReactDOM.render(
