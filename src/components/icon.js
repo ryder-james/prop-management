@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Icon = props => {
-    const { icon } = props;
+    const { className, icon } = props;
     return (
-        <i className={`icon ${icon}`}/>
+        <div className={className}>
+            <i className={icon}/>
+        </div>
     );
 }
 
