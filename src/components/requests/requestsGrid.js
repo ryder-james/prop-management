@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 import Button from '../button';
 import history from '../../history';
 import RequestsBoxes from './requestsBoxes';
 import Requests from './requests';
 
 class RequestsGrid extends Component {
+
+    componentDidMount() {
+        this.props.fetchRequests();
+    }
+
     render() {
         return (
             <div className="requests-grid">
@@ -17,4 +25,4 @@ class RequestsGrid extends Component {
     }
 }
 
-export default RequestsGrid;
+export default connect(null, actions)(RequestsGrid);
