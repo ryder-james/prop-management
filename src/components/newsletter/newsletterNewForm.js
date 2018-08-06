@@ -6,7 +6,12 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
 class NewNewsletterForm extends Component {
     render() {
-        const { handleSubmit, onCancel, title, newsletterToEdit } = this.props;
+        const { handleSubmit, onCancel, formTitle, newsletterToEdit } = this.props;
+        const {
+            fieldOnePlaceholder, fieldOneTitle,
+            fieldTwoPlaceholder, fieldTwoTitle
+        } = this.props;
+
         let { titleToEdit, bodyToEdit, imageURLToEdit } = "";
 
         if (newsletterToEdit) {
@@ -17,11 +22,11 @@ class NewNewsletterForm extends Component {
 
         return (
             <form onSubmit={handleSubmit} className="new-newsletter-form">
-                <FormTitle className="new-newsletter-form__title" text={title}/>
+                <FormTitle className="new-newsletter-form__title" text={formTitle}/>
                 <Field
                     className="new-newsletter-form__newsletter-title"
-                    placeholder="Newsletter Title"
-                    title="Newsletter Title"
+                    placeholder={fieldOnePlaceholder}
+                    title={fieldOneTitle}
                     name="title"
                     type="text"
                     editValue={titleToEdit}
@@ -29,8 +34,8 @@ class NewNewsletterForm extends Component {
                 />
                 <Field
                     className="new-newsletter-form__body"
-                    placeholder="Newsletter Body"
-                    title="Body"
+                    placeholder={fieldTwoPlaceholder}
+                    title={fieldTwoTitle}
                     name="body"
                     type="text"
                     editValue={bodyToEdit}
