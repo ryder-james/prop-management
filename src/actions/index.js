@@ -9,7 +9,8 @@ import {
 } from './newsletter';
 
 import {
-    changeSelectedRequest
+    changeSelectedRequest,
+    createNewRequest
 } from './requests';
 
 export {
@@ -17,5 +18,6 @@ export {
     signIn,
     fetchNewsletters,
     fetchNewsletterWithID,
-    changeSelectedRequest
+    changeSelectedRequest,
+    createNewRequest
 };
