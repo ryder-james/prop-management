@@ -49,3 +49,37 @@
         grid-auto-flow: column;
     }
 }
+
+.requests-item {
+    &__icon {
+        font-size: 3rem;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.3;
+    }
+
+    &__tenant-unit {
+        color: $c-red-C9;
+        font-size: 1.3rem;
+        font-family: $f-encode-cond;
+        line-height: 1.6rem;
+    }
+
+    &__arrow {
+        color: $c-gray-4D;
+        font-size: 3rem;
+    }
+
+    &__date {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+
+    &__description-text {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+}
