@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import RequestsBox from './requestsBox';
+import { PENDING, PROGRESS, COMPLETE } from '../../actions/types';
 
 class RequestsBoxes extends Component {
     render() {
         return (
             <div className="requests-boxes">
-                <RequestsBox title="Pending" count={this.props.pendingCount} icon="fas fa-plus"/>
-                <RequestsBox title="In Progress" count={this.props.progressCount} icon="fas fa-plus"/>
-                <RequestsBox title="Complete" count={this.props.completeCount} icon="fas fa-plus"/>
+                <RequestsBox title="Pending" type={PENDING} count={this.props.pendingCount} icon="fas fa-plus"/>
+                <RequestsBox title="In Progress" type={PROGRESS} count={this.props.progressCount} icon="fas fa-plus"/>
+                <RequestsBox title="Complete" type={COMPLETE} count={this.props.completeCount} icon="fas fa-plus"/>
             </div>
         );
     }
@@ -23,13 +24,13 @@ function mapStateToProps(state) {
 
     requests.map(request => {
         switch (request.status) {
-            case "pending":
+            case PENDING:
                 pendingCount++;
                 break;
-            case "progress":
+            case PROGRESS:
                 progressCount++;
                 break;
-            case "complete":
+            case COMPLETE:
                 completeCount++;
                 break;
             default:

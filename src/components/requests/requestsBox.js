@@ -12,16 +12,16 @@ class RequestsBox extends Component {
     }
 
     render() {
-        const { count, title, icon } = this.props;
+        const { count, title, icon, type } = this.props;
 
         this.active = false;
 
-        if (this.props.selectedRequests == title) {
+        if (this.props.selectedRequestType == type) {
             this.active = true;
         }
 
         return (
-            <a onClick={() => this.props.changeSelectedRequest(title)} className={`requests-box ${this.active ? "active" : ""}`}>
+            <a onClick={() => this.props.changeSelectedRequest(type)} className={`requests-box ${this.active ? "active" : ""}`}>
                 <div className="requests-box__count">{count}</div>
                 <div className="requests-box__title">{title}</div>
                 <div className={`requests-box__icon ${icon}`}/>
@@ -32,10 +32,10 @@ class RequestsBox extends Component {
 }
 
 function mapStateToProps(state) {
-    const { selectedRequests } = state.requests;
+    const { selectedRequestType } = state.requests;
 
     return {
-        selectedRequests
+        selectedRequestType
     }
 }
 

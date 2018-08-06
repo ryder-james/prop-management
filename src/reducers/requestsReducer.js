@@ -1,11 +1,12 @@
 import {
     FETCH_REQUEST_TITLE,
-    SET_REQUESTS
+    SET_REQUESTS,
+    PENDING
 } from '../actions/types';
 
 const INIT_STATE = {
     requests: [],
-    selectedRequests: "Pending"
+    selectedRequestType: PENDING
 }
 
 export default function(state = INIT_STATE, action) {
@@ -14,7 +15,7 @@ export default function(state = INIT_STATE, action) {
             const title = action.payload;
             return {
                 ...state,
-                selectedRequests: title
+                selectedRequestType: title
             }
         case SET_REQUESTS:
             return {
