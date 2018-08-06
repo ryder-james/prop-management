@@ -2,7 +2,7 @@
 .requests-item {
     display: grid;
     grid-template-columns: [icon-s] 68px [icon-e s title-s] minmax(40px, 1fr) [title-e arrow-s] 68px [arrow-e date-s] 100px [date-e e] 60px;
-    grid-template-rows: [s title-s] 34px [title-e tenant-s] 34px [tenant-e e description-s] 147px [description-e];
+    grid-template-rows: [s title-s] 34px [title-e tenant-s] 34px [tenant-e e];
     align-items: center;
 
     &__icon {
@@ -48,8 +48,9 @@
 
     &__description {
         grid-column: s/e;
-        grid-row: description-s/description-e;
+    }
 
+    .item-description {
         display: grid;
         grid-column-gap: 4rem;
         grid-auto-flow: column;
@@ -92,8 +93,17 @@
         line-height: 1.7rem;
     }
 
-    &__description-text {
-        font-size: 1.4rem;
-        line-height: 1.7rem;
+    .item-description {
+        margin-top: 1.4rem;
+        margin-bottom: 2.2rem;
+        
+        &__img {
+            object-fit: cover;
+        }
+
+        &__text {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
     }
 }
