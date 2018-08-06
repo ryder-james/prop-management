@@ -12,9 +12,10 @@ export function changeSelectedRequest(title) {
     }
 }
 
-export function createNewRequest(userID, newRequest, success) {
+export function createNewRequest(userID, fields, success) {
     console.log("token:", localStorage.getItem("token"));
     console.log("uID:", userID);
+    console.log("fields:", fields);
 
     // return function() {
     //     axios.post(`${ROOT_URL}/requests/new`, newRequest)
