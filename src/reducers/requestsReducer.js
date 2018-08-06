@@ -1,5 +1,6 @@
 import {
-    FETCH_REQUEST_TITLE
+    FETCH_REQUEST_TITLE,
+    SET_REQUESTS
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -14,6 +15,11 @@ export default function(state = INIT_STATE, action) {
             return {
                 ...state,
                 selectedRequests: title
+            }
+        case SET_REQUESTS:
+            return {
+                ...state,
+                requests: action.payload
             }
         default:
             return state;
