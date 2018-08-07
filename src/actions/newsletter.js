@@ -41,11 +41,29 @@ export function createNewNewsletter(formData, success) {
             }
         })
             .then(response => {
-                console.log();
                 success();
             })
             .catch(err => {
                 console.log(err);
             })
+    }
+}
+
+export function editNewsletter(itemID, formData, success) {
+    const token = localStorage.getItem("token");
+    const id = itemID;
+    return function() {
+        axios.post(`${ROOT_URL}/newsletters/edit/${id}`, formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+                authorization: token
+            }
+        })
+            .then(response => {
+                success();
+            })
+            .catch(err => {
+                console.log(err);
+            }) 
     }
 }

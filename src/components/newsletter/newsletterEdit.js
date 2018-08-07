@@ -7,7 +7,17 @@ import EditNewsletterForm from './newsletterEditForm';
 
 class EditNewsletter extends Component {
     onSubmit = fields => {
-        history.push('/dashboard');
+        const { title, body, image } = fields;
+
+        var formData = new FormData();
+
+        formData.append("title", title)
+        formData.append("body", body);
+        formData.append("image", image);
+     
+        this.props.editNewsletter(this.props.match.params.id, formData, () => {
+            history.push('/dashboard');
+        })
     }
 
     onCancel = () => {
