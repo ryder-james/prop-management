@@ -6,19 +6,11 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
 class NewNewsletterForm extends Component {
     render() {
-        const { handleSubmit, onCancel, formTitle, newsletterToEdit } = this.props;
+        const { handleSubmit, formTitle } = this.props;
         const {
             fieldOnePlaceholder, fieldOneTitle,
             fieldTwoPlaceholder, fieldTwoTitle
         } = this.props;
-
-        let { titleToEdit, bodyToEdit, imageURLToEdit } = "";
-
-        if (newsletterToEdit) {
-            titleToEdit = newsletterToEdit.title;
-            bodyToEdit = newsletterToEdit.body;
-            imageURLToEdit = newsletterToEdit.imageUrl;
-        }
 
         return (
             <form onSubmit={handleSubmit} className="new-newsletter-form">
@@ -29,7 +21,6 @@ class NewNewsletterForm extends Component {
                     title={fieldOneTitle}
                     name="title"
                     type="text"
-                    editValue={titleToEdit}
                     component={FormInput}
                 />
                 <Field
@@ -38,7 +29,6 @@ class NewNewsletterForm extends Component {
                     title={fieldTwoTitle}
                     name="body"
                     type="text"
-                    editValue={bodyToEdit}
                     component={FormTextArea}
                 />
                 <Field
@@ -57,7 +47,7 @@ class NewNewsletterForm extends Component {
                     name="cancel"
                     type="button"
                     component={FormButton}
-                    onClick={onCancel}
+                    onClick={this.props.onCancel}
                 />
                 <Field
                     className="new-newsletter-form__image"
@@ -65,7 +55,6 @@ class NewNewsletterForm extends Component {
                     name="image"
                     type="file"
                     title="Image"
-                    imageUrl={imageURLToEdit}
                     component={FormImage}
                 />
             </form>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class FormInput extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue } = this.props;
+        const { className, title, input, type, placeholder } = this.props;
         return (
             <div className={`${className} form-input`}>
             <label className="form-input__title">{title}</label>
@@ -11,7 +11,6 @@ export class FormInput extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder}
-                    value={editValue ? editValue : input.value}
                 />
             </div>
         )
@@ -43,7 +42,7 @@ export class FormButton extends Component {
 
 export class FormTextArea extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue } = this.props;
+        const { className, title, input, type, placeholder } = this.props;
         
         return (
             <div className={`${className} form-textarea`}>
@@ -53,7 +52,6 @@ export class FormTextArea extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder}
-                    value={editValue ? editValue : input.value}
                 />
             </div>
         );
@@ -69,7 +67,7 @@ export class FormImage extends Component {
     }
 
     render() {
-        const { className, title, input, imageUrl } = this.props;
+        const { className, title, input } = this.props;
 
         return (
             <div className={`${className} form-image`}>
@@ -77,7 +75,7 @@ export class FormImage extends Component {
                 <img 
                     id="newsletter-new-image"
                     className="form-image__image"
-                    src={imageUrl}
+                    // src={imageUrl}
                 />
                 <input
                     className="form-image__replace"
