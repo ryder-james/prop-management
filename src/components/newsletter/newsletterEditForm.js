@@ -3,6 +3,7 @@ import { reduxForm, Field } from "redux-form";
 import { connect } from 'react-redux';
  import { FormTitle } from "../formTitle";
 import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
+import { ROOT_URL } from '../../config';
  class EditNewsletterForm extends Component {
    render() {
      const { handleSubmit, formTitle } = this.props;
@@ -54,6 +55,7 @@ import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
           type="file"
           title="Image"
           component={FormImage}
+          imageURL={this.props.initialValues.imageURL ? `${ROOT_URL}/${this.props.initialValues.imageURL}` : 'http://via.placeholder.com/150x137'}
         />  
        </form>
     );
