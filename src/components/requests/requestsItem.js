@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+
 import Icon from '../icon';
 import Button from '../button';
 import AnimateHeight from 'react-animate-height';
@@ -26,6 +29,13 @@ class RequestsItem extends Component {
         }
     }
 
+    handleStatus = () => {
+        const { _id, status } = this.props;
+        this.props.changeStatus({_id, status}, () => {
+            this.props.fetchRequests();
+        });
+    }
+
     render() {
         const { _id, title, body, date, imageURL, status } = this.props;
         const parsedDate = new Date(date);
@@ -43,7 +53,7 @@ class RequestsItem extends Component {
                 <div className="requests-item__date">
                     { parsedDate.getMonth() + 1 }/{ parsedDate.getDate() }/{ parsedDate.getFullYear() - 2000}
                 </div>
-                <Button className="requests-item__move" icon="fas fa-wrench" callback={() => console.log("changing request status")} />
+                <Button className="requests-item__move" icon="fas fa-wrench" callback={() => this.handleStatus()} />
                 <div className="requests-item__description">
                     <AnimateHeight duration={300} height={this.state.height}>
                         <div className="item-description">
@@ -62,4 +72,4 @@ class RequestsItem extends Component {
     }
 }
 
-export default RequestsItem;
+export default connect(null, actions)(RequestsItem);

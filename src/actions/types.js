@@ -5,5 +5,5 @@ export const FETCH_REQUEST_TITLE = "FETCH_REQUEST_TITLE";
 export const SET_REQUESTS = "SET_REQUESTS";
 
 export const PENDING = "pending";
-export const PROGRESS = "progress";
+export const PROGRESS = "in-progress";
 export const COMPLETE = "complete";

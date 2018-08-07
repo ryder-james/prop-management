@@ -11,7 +11,8 @@ import {
 import {
     changeSelectedRequest,
     createNewRequest,
-    fetchRequests
+    fetchRequests,
+    changeStatus
 } from './requests';
 
 export {
@@ -21,5 +22,6 @@ export {
     fetchNewsletterWithID,
     changeSelectedRequest,
     createNewRequest,
-    fetchRequests
+    fetchRequests,
+    changeStatus
 };
