@@ -20,7 +20,7 @@ class RequestsItem extends Component {
     }
 
     toggleDropdown = () => {
-        const element = document.querySelector("#requests-item")
+        const element = document.getElementById(`${this.props._id}-requests-item`)
         if (this.state.height == 0) {
             element.classList.add("bg-F8");
             this.setState({ height: "auto" });
@@ -55,7 +55,7 @@ class RequestsItem extends Component {
         }
 
         return (
-            <div id="requests-item" className="requests-item">
+            <div id={`${_id}-requests-item`} className="requests-item">
                 <Icon className="requests-item__icon" icon={mainIcon} />
                 <div className="requests-item__title">
                     <div className="requests-item__title__text">{title}</div>
