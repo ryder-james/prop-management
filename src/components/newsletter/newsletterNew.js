@@ -11,14 +11,14 @@ class NewNewsletter extends Component {
     onSubmit = fields => {
         const { title, body, image } = fields;
 
-        const formData = new FormData();
+        var formData = new FormData();
         formData.append("title", title);
         formData.append("body", body);
         formData.append("image", image);
 
-        this.props.createNewNewsletter(this.props._id, formData, () => {
+        this.props.createNewNewsletter(formData, () => {
             history.push('/dashboard');
-        })
+        });
     }
 
     onCancel = () => {

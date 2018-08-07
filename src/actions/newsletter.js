@@ -30,8 +30,9 @@ export function fetchNewsletterWithID(id) {
     }
 }
 
-export function createNewNewsletter(userId, formData, success) {
+export function createNewNewsletter(formData, success) {
     const token = localStorage.getItem("token");
+
     return function () {
         axios.post(`${ROOT_URL}/newsletters/new`, formData, {
             headers: {
@@ -40,7 +41,7 @@ export function createNewNewsletter(userId, formData, success) {
             }
         })
             .then(response => {
-                console.log(response.data);
+                console.log();
                 success();
             })
             .catch(err => {
