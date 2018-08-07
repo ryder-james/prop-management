@@ -8,6 +8,7 @@ import Button from '../button';
 import AnimateHeight from 'react-animate-height';
 
 import { ROOT_URL } from '../../config';
+import { PROGRESS, COMPLETE } from '../../actions/types';
 
 class RequestsItem extends Component {
     constructor() {
@@ -40,9 +41,22 @@ class RequestsItem extends Component {
         const { _id, title, body, date, imageURL, status } = this.props;
         const parsedDate = new Date(date);
 
+        let moveButtonIcon = "fas fa-wrench";
+        let mainIcon = "fas fa-exclamation-triangle";
+
+        switch (status) {
+            case PROGRESS:
+                moveButtonIcon = "fas fa-check-square";
+                mainIcon = "fas fa-wrench";
+                break;
+            case COMPLETE:
+                moveButtonIcon = "fas fa-exclamation-triangle";
+                mainIcon = "fas fa-check-square";
+        }
+
         return (
             <div id="requests-item" className="requests-item">
-                <Icon className="requests-item__icon" icon="fas fa-exclamation-triangle" />
+                <Icon className="requests-item__icon" icon={mainIcon} />
                 <div className="requests-item__title">
                     <div className="requests-item__title__text">{title}</div>
                     <Icon callback={() => this.toggleDropdown()} className="requests-item__title__arrow" icon="fas fa-sort-down" />
@@ -53,7 +67,7 @@ class RequestsItem extends Component {
                 <div className="requests-item__date">
                     { parsedDate.getMonth() + 1 }/{ parsedDate.getDate() }/{ parsedDate.getFullYear() - 2000}
                 </div>
-                <Button className="requests-item__move" icon="fas fa-wrench" callback={() => this.handleStatus()} />
+                <Button className="requests-item__move" icon={moveButtonIcon} callback={() => this.handleStatus()} />
                 <div className="requests-item__description">
                     <AnimateHeight duration={300} height={this.state.height}>
                         <div className="item-description">
