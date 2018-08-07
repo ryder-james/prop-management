@@ -4,6 +4,10 @@ import {
 } from './auth';
 
 import {
+    updateHeader
+} from './header';
+
+import {
     fetchNewsletters,
     fetchNewsletterWithID,
     createNewNewsletter,
@@ -20,6 +24,7 @@ import {
 export {
     signUp,
     signIn,
+    updateHeader,
     fetchNewsletters,
     fetchNewsletterWithID,
     createNewNewsletter,
