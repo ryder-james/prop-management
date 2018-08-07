@@ -6,7 +6,7 @@
 
     color: black;
 
-    border: 0.1rem solid $c-gray-E6;
+    border: 0.15rem solid $c-gray-E6;
     border-radius: 0.5rem;
 
     display: grid;
@@ -46,12 +46,14 @@
 
         background: $c-red-C9;
 
-        border: 0.1rem solid $c-red-C9;
+        border: 0.15rem solid $c-red-C9;
         border-bottom: none;
         border-left: none;
     }
 
     &__icon {
+        font-size: 5rem;
+
         visibility: hidden;
     }
 
@@ -73,5 +75,5 @@
 .active {
     background: $c-red-C9;
     color: white;
-    border-color: $c-red-C9;
+    border: 0.15rem solid $c-red-C9;
 }
