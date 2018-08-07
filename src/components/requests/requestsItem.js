@@ -63,7 +63,7 @@ class RequestsItem extends Component {
                     <Icon callback={() => this.toggleDropdown()} className="requests-item__title__arrow" icon="fas fa-sort-down" />
                 </div>
                 <div className="requests-item__tenant-unit">
-                    Max - Unit 115
+                    {this.props.fullname} - Unit {this.props.unit}
                 </div>
                 <div className="requests-item__date">
                     { parsedDate.getMonth() + 1 }/{ parsedDate.getDate() }/{ parsedDate.getFullYear() - 2000}
@@ -93,4 +93,12 @@ class RequestsItem extends Component {
     }
 }
 
-export default connect(null, actions)(RequestsItem);
+function mapStateToProps(state) {
+    const { fullname, unit } = state.auth.user;
+    return {
+        fullname,
+        unit
+    }
+}
+
+export default connect(mapStateToProps, actions)(RequestsItem);
